@@ -17,9 +17,13 @@ class MaxFunction(AbstractFunction):
       AbstractFunction.__init__(self, "Numeric", 
                 self.NAME, 
                 Range.between(Integer(3),Integer(4)),
-                "The max() function evaluate body for every element of the iterable and return the one with max value",
+                "The max() function evaluate for every element of the iterable and return the one with max value"+
+                "If the second expression it's not set, it will return the value from the first expression",
                 self.NAME+"( iterable, varname, expression, expression )",
-                None,
+                ["iterable - iterable object where the expression will be applied",
+                 "varname - name that will have the iterable element in the expression",
+                 "expression - expression to calculate the value to compare in the max function",
+                 "expression - (optional) expression to calculate the value from that element to return"],
                 "Object",
                 False
         );

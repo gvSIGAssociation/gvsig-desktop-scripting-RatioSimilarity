@@ -8,10 +8,18 @@ from java.lang import Integer
 import sys
 
 class SumProductFunction(AbstractFunction):
-
+    NAME = "SUMPRODUCT"
     def __init__(self):
-        AbstractFunction.__init__(self, "Numeric", "SUMPRODUCT", Range.is(Integer(2)))
-
+      AbstractFunction.__init__(self, "Numeric", 
+                self.NAME, 
+                Range.is(Integer(2)),
+                "The SUMPRODUCT() function calculates the sumatory between two list of numbers.\n"+
+                "Each value will be multiplied between its corresponding value in the other list before the sumatory",
+                self.NAME+"( valueA, valueB )",
+                ["listA - list of numeric values", "listB - list of numerics values"],
+                "Double",
+                False
+        )
     def allowConstantFolding(self):
         return True
 

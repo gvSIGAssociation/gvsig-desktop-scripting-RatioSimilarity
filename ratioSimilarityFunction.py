@@ -9,10 +9,17 @@ import sys
 #from org.apache.commons.text.similarity import JaroWinklerDistance
 
 class RatioSimilarityFunction(AbstractFunction):
-
+    NAME = "RATIOSIM"
     def __init__(self):
-        AbstractFunction.__init__(self, "Numeric", "RATIOSIM", Range.is(Integer(2)))
-
+      AbstractFunction.__init__(self, "Numeric", 
+                self.NAME, 
+                Range.is(Integer(2)),
+                "The RATIOSIM() function calculates the similarity between two numbers (min number/max number) o between strings (using JaroWinklerDistance) ",
+                self.NAME+"( valueA, valueB )",
+                ["valueA - numeric or string value", "valueB - numeric or string value"],
+                "Object",
+                False
+        )
     def allowConstantFolding(self):
         return True
 
