@@ -26,7 +26,7 @@ class RatioSimilaritySymbolTableFactory(AbstractSymbolTableFactory):
         AbstractSymbolTableFactory.__init__(self, RatioSimilaritySymbolTable.NAME, True)
         self.symbolTable = None
 
-    def createSymbolTable(self, *args):
+    def create(self, *args):
         if self.symbolTable==None:
             self.symbolTable = RatioSimilaritySymbolTable()
         
