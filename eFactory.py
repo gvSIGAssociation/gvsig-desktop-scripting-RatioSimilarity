@@ -4,6 +4,7 @@ import gvsig
 
 from org.gvsig.expressionevaluator.spi import AbstractSymbolTableFactory
 from org.gvsig.expressionevaluator.spi import AbstractSymbolTable
+from org.gvsig.expressionevaluator import SymbolTableFactory
 from org.gvsig.expressionevaluator import ExpressionEvaluatorLocator
 
 from addons.RatioSimilarity.minFunction import MinFunction
@@ -20,7 +21,7 @@ class RatioSimilaritySymbolTable(AbstractSymbolTable):
         self.addFunction(MaxFunction())
         self.addFunction(MinFunction())
         self.addFunction(SumProductFunction())
-        
+
 class RatioSimilaritySymbolTableFactory(AbstractSymbolTableFactory):
     def __init__(self):
         AbstractSymbolTableFactory.__init__(self, RatioSimilaritySymbolTable.NAME, True)
@@ -31,9 +32,7 @@ class RatioSimilaritySymbolTableFactory(AbstractSymbolTableFactory):
             self.symbolTable = RatioSimilaritySymbolTable()
         
         return self.symbolTable
-    
-
+      
 def main(*args):
-
     manager = ExpressionEvaluatorLocator.getManager();
     manager.registerSymbolTable(RatioSimilaritySymbolTableFactory());
