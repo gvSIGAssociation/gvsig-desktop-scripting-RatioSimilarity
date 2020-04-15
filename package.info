@@ -1,0 +1,21 @@
+#
+#Thu Apr 16 01:14:59 CEST 2020
+owner=Asociacion gvSIG
+code=RatioSimilarity
+java-version=j1_7
+operating-system=all
+description=
+official=true
+type=Script
+web-url=
+version=1.0.0-2
+buildNumber=2
+owner-url=http\://www.gvsig.com/es
+dependencies=
+sources-url=https\://github.com/gvSIGAssociation/gvsig-desktop-scripting-RatioSimilarity
+name=Ratio Similarity
+gvSIG-version=2.5.1
+state=testing
+categories=
+model-version=1.0.1
+architecture=all
