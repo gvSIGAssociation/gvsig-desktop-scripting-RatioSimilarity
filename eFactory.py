@@ -2,7 +2,7 @@
 
 import gvsig
 
-from org.gvsig.expressionevaluator.spi import AbstractSymbolTableFactory
+from org.gvsig.expressionevaluator.spi import AbstractSymbolTableFactory_java5
 from org.gvsig.expressionevaluator.spi import AbstractSymbolTable
 from org.gvsig.expressionevaluator import SymbolTableFactory
 from org.gvsig.expressionevaluator import ExpressionEvaluatorLocator
@@ -22,12 +22,12 @@ class RatioSimilaritySymbolTable(AbstractSymbolTable):
         self.addFunction(MinFunction())
         self.addFunction(SumProductFunction())
 
-class RatioSimilaritySymbolTableFactory(AbstractSymbolTableFactory):
+class RatioSimilaritySymbolTableFactory(AbstractSymbolTableFactory_java5):
     def __init__(self):
-        AbstractSymbolTableFactory.__init__(self, RatioSimilaritySymbolTable.NAME, True)
+        AbstractSymbolTableFactory_java5.__init__(self, RatioSimilaritySymbolTable.NAME, True)
         self.symbolTable = None
 
-    def create(self, *args):
+    def createSymbolTable(self, *args):
         if self.symbolTable==None:
             self.symbolTable = RatioSimilaritySymbolTable()
         
